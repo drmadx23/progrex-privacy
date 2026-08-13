@@ -16,101 +16,240 @@
   }
   h1 { color: #92400e; }
   h2 { color: #92400e; margin-top: 2em; border-bottom: 1px solid #f0dcb8; padding-bottom: 4px; }
+  h3 { color: #92400e; margin-top: 1.5em; font-size: 1.05em; }
   .updated { color: #8a7a60; font-size: 0.9em; }
   a { color: #d97706; }
   ul { padding-left: 1.3em; }
   code { background: #f5e9d0; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
   .logo { display: block; width: 96px; height: 96px; border-radius: 24px; margin-bottom: 12px; }
+  .callout {
+    background: #f5e9d0;
+    border-left: 4px solid #d97706;
+    padding: 12px 16px;
+    margin: 20px 0;
+    border-radius: 4px;
+  }
+  table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 0.95em; }
+  th, td { border: 1px solid #f0dcb8; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #f5e9d0; }
 </style>
 </head>
 <body>
 
 <img class="logo" src="logo.png" alt="Progrex logo">
 <h1>Progrex Privacy Policy</h1>
-<p class="updated">Last updated: August 6, 2026</p>
+<p class="updated">Last updated: August 13, 2026</p>
 
 <p>
-  Progrex ("the app", "we", "us") is a task and reminder app published by
-  the app's developer. Progrex is built to work entirely on your own
-  device, with no account and no server behind it. This page explains
-  what information the app touches, where it's stored, and the choices
-  you have.
+  Progrex ("the app", "we", "us") is a task and reminder app. This page explains what
+  information the app touches, where it is stored, who else can see it, and the choices you have.
 </p>
+
+<div class="callout">
+  <strong>The short version.</strong> Progrex works offline and keeps your tasks on your own device.
+  Nothing is uploaded and no account is needed. That changes only if you choose to use
+  <strong>peer accountability</strong> — the optional feature where another person confirms you
+  finished a task. If you use it, a small amount of information about you and those specific tasks
+  is stored on Google Firebase so your peer can see it. If you never use it, Progrex still makes no
+  network requests of its own.
+</div>
 
 <h2>Data stored only on your device</h2>
 <p>
-  Everything you put into Progrex stays on your phone, in the app's
-  private local storage. This includes:
+  Everything you put into Progrex is stored on your phone, in the app's private local storage.
+  This includes:
 </p>
 <ul>
-  <li>Your tasks: titles, notes, due dates, estimates, priority, energy level, recurrence settings</li>
+  <li>Your tasks: titles, notes, due dates, estimates, priority, energy level, recurrence settings, sub-tasks</li>
   <li>Completion history: when a task was completed, how long it actually took, postpone history and the reasons you gave</li>
-  <li>Your "plan" fields on a task, if you fill them in: an implementation-intention trigger ("when X"), a next physical action, a precommitment choice</li>
+  <li>Your "plan" fields on a task, if you fill them in: an implementation-intention trigger ("when X"), a next physical action, a precommitment choice, and your answer to "why this matters"</li>
   <li>Gamification data: points, level, streaks, badges — calculated on-device from your task history</li>
-  <li>App preferences: theme, language, default time budget, energy preference, protected rest-time window, in-app language selection</li>
+  <li>Your answers to the setup questions, which only change what the app puts in front of you</li>
+  <li>Rewards progress and mini-game scores</li>
+  <li>App preferences: theme, colour palette, language, default time budget, energy preference, protected rest-time window</li>
 </ul>
 <p>
-  We don't have access to any of this. It is never transmitted to us,
-  to any server, or to any third party. There is no account to create
-  and no sign-in of any kind in Progrex.
+  None of the above is transmitted to us or to anyone else. The only exception is the
+  <em>title</em> of a task you personally choose to hand to a peer — see the next section.
+</p>
+
+<h2>Peer accountability (optional, off unless you use it)</h2>
+<p>
+  Progrex lets you pair with another Progrex user and hand them a specific task, so that only they
+  can mark it done. This feature is entirely optional. Everything in this section applies only if
+  you choose to use it.
+</p>
+<p>
+  When you use it, the following is stored on Google Firebase (Firestore, Authentication and
+  Cloud Messaging), operated by Google:
+</p>
+
+<table>
+  <tr><th>What</th><th>Why</th></tr>
+  <tr>
+    <td>An account identifier for you</td>
+    <td>So the app knows which tasks and peers are yours. By default this is an anonymous, randomly generated ID that contains no personal information.</td>
+  </tr>
+  <tr>
+    <td>Your invite code and the display name you choose</td>
+    <td>So somebody can add you as a peer, and so they can recognise you. The display name is whatever you type; it does not have to be your real name.</td>
+  </tr>
+  <tr>
+    <td>Who you are paired with, and whether a request is pending, accepted or declined</td>
+    <td>To maintain the peer relationship.</td>
+  </tr>
+  <tr>
+    <td><strong>The title of any task you hand to a peer</strong>, plus its status and timestamps</td>
+    <td>Your peer cannot judge whether something is finished without knowing what it is.</td>
+  </tr>
+  <tr>
+    <td>Encouragement messages sent between you and your peer</td>
+    <td>To deliver them. Both of you can read the thread on that task.</td>
+  </tr>
+  <tr>
+    <td>A notification token for your device</td>
+    <td>So we can notify you when your peer acts on a task or sends you a message.</td>
+  </tr>
+</table>
+
+<p>
+  <strong>What is deliberately <em>not</em> sent, even for a peer task:</strong> the task's notes,
+  due date, reminders, time estimates, how long you actually worked, your postpone reasons, and your
+  "why this matters" answer. Your peer sees the title and whether it is done — nothing else about
+  the task, and nothing at all about your other tasks.
+</p>
+
+<h2>Accounts</h2>
+<p>
+  You can use Progrex without any account. If you use peer accountability, the app signs you in
+  anonymously — a random identifier with no personal details attached.
+</p>
+<p>
+  You may optionally create a real account so your peers and purchases survive reinstalling the app
+  or changing phone:
+</p>
+<ul>
+  <li><strong>Email and password.</strong> Your email address is stored by Google Firebase Authentication. We use it to identify your account and to send password resets.</li>
+  <li><strong>Sign in with Google.</strong> Google provides us with your email address, name and profile picture URL from your Google account.</li>
+</ul>
+<p>
+  Creating an account upgrades your existing anonymous identity rather than replacing it, so your
+  invite code and existing peers carry over.
 </p>
 
 <h2>Calendar access (optional)</h2>
 <p>
-  If you turn on calendar sync in Settings, Progrex writes an event to
-  a calendar on your device (via Android's standard Calendar provider)
-  for each task with a due date, and keeps that event updated as you
-  edit or complete the task. This is opt-in, off by default, and
-  entirely local to your device — Progrex only writes to your device's
-  own calendar storage, the same as any other calendar app you already
-  use, and does not read your existing events. Turning sync off leaves
-  any already-created events in place; you can delete them yourself.
+  If you turn on calendar sync in Settings, Progrex writes an event to a calendar on your device
+  (via Android's standard Calendar provider) for each task with a due date, and keeps that event
+  updated as you edit or complete the task. This is opt-in, off by default, and entirely local to
+  your device — Progrex only writes to your device's own calendar storage, the same as any other
+  calendar app, and does not read your existing events. Turning sync off leaves any already-created
+  events in place; you can delete them yourself.
 </p>
 
 <h2>Notifications</h2>
 <p>
-  Progrex schedules local reminder notifications for your tasks, based
-  on the reminder lead time you choose per task (e.g. 15 minutes before,
-  1 day before). These are scheduled and delivered entirely on your
-  device using Android's own notification and background-work systems.
-  No reminder data is sent anywhere.
+  Progrex schedules local reminder notifications for your tasks, based on the reminder lead time
+  you choose per task. These are scheduled and delivered entirely on your device, and no reminder
+  data is sent anywhere.
+</p>
+<p>
+  Separately, if you use peer accountability, we send push notifications through Google Firebase
+  Cloud Messaging when your peer acts on one of your tasks or sends you a message. These are only
+  sent to the two people involved in that task.
 </p>
 
 <h2>Backup and export</h2>
 <p>
-  Progrex includes a manual Backup/Export feature that lets you save a
-  copy of your data (for example, to move it to a new device). This
-  export is created and shared entirely at your own initiative, through
-  your device's own file/share picker — we never receive a copy, and
-  nothing is uploaded automatically.
+  Progrex includes a manual backup/export feature that saves a copy of your data, for example to
+  move it to a new device. This export is created and shared at your own initiative, through your
+  device's own file and share picker — we never receive a copy, and nothing is uploaded
+  automatically. <strong>Exporting your own data is free and always will be.</strong>
 </p>
 
-<h2>No accounts, no ads, no purchases, no third-party analytics</h2>
+<h2>Paid features</h2>
 <p>
-  Progrex has no login, no advertising, no in-app purchases, and does
-  not use any third-party analytics or tracking SDKs. It makes no
-  network requests of its own.
+  Progrex includes optional paid features. Any purchase is processed by Google Play; we never
+  see or store your payment details, card number or billing address. Google tells the app only
+  whether a purchase is active. Your core tasks, the focus timer and exporting your data are not
+  behind any payment.
 </p>
 
-<h2>Data deletion</h2>
+<h2>Advertising and analytics</h2>
 <p>
-  Since all of your data lives only on your device, uninstalling the
-  app removes it completely. Within the app, you can also delete
-  individual tasks or completed-task history directly from the
-  Completed tab at any time.
+  Progrex contains <strong>no advertising</strong>, no advertising identifiers, and no third-party
+  analytics or tracking SDKs. Google Analytics is switched off for this project. We do not build
+  profiles about you, and we do not sell or share your information with anyone for marketing.
+</p>
+
+<h2>Who else can see your information</h2>
+<ul>
+  <li><strong>Your peer</strong> sees your display name and the title and status of the specific tasks you hand to them, plus messages in those threads. They cannot see any of your other tasks.</li>
+  <li><strong>Google</strong> processes and stores the peer data described above on our behalf, as our infrastructure provider (Firebase Authentication, Firestore, Cloud Messaging and Cloud Functions), and processes payments through Google Play.</li>
+</ul>
+<p>
+  We do not sell your information, and we do not share it with anyone else except where we are
+  legally required to.
+</p>
+
+<h2>How long we keep it</h2>
+<p>
+  Data on your device stays until you delete it or uninstall the app. Peer data stored on Firebase
+  stays until you delete your account, or until you or your peer delete the relevant task or link.
+</p>
+
+<h2>Deleting your data</h2>
+<h3>Everything on your device</h3>
+<p>
+  Uninstalling Progrex removes all local data completely. Within the app you can delete individual
+  tasks, and clear completed-task history from the Completed tab, at any time.
+</p>
+<h3>Your account and peer data</h3>
+<p>
+  Go to <strong>Settings → Account → Delete account</strong>. This permanently removes:
+</p>
+<ul>
+  <li>Your login and account identifier</li>
+  <li>Your profile, display name and invite code</li>
+  <li>Every peer link you have, in both directions</li>
+  <li>Every peer task you created, together with the encouragement messages on it</li>
+</ul>
+<p>
+  <strong>One thing this cannot remove, and you should know it:</strong> if you sent an
+  encouragement message on a task belonging to <em>someone else</em>, that message stays in their
+  copy of that thread, in the same way an email you sent stays in the recipient's inbox. Your
+  anonymous identifier may also remain listed as the peer on tasks other people created. If you
+  want those removed, ask that person to delete the task, or contact us at the address below.
+</p>
+
+<h2>Your rights</h2>
+<p>
+  Depending on where you live, you may have rights to access, correct, export or delete your
+  personal information, and to object to or restrict its processing. Progrex is built so you can
+  exercise most of these yourself and immediately: your data is on your device, the export feature
+  gives you a portable copy for free, and account deletion is available in the app without needing
+  to ask us. For anything else, contact us using the address below.
 </p>
 
 <h2>Children's privacy</h2>
 <p>
-  Progrex is not directed at children under 13, and we do not knowingly
-  collect personal information from children — in practice, we don't
-  collect personal information from anyone, since nothing leaves your
-  device.
+  Progrex is not directed at children under 13, and we do not knowingly collect personal
+  information from children. If you believe a child has provided us with personal information,
+  contact us and we will delete it.
+</p>
+
+<h2>Where your data is processed</h2>
+<p>
+  Peer data is stored on Google Cloud infrastructure in the United States. If you are located
+  elsewhere, including in the European Economic Area or the United Kingdom, your information may be
+  transferred to and processed in the United States under the safeguards Google applies as our
+  processor.
 </p>
 
 <h2>Changes to this policy</h2>
 <p>
-  If this policy changes, we'll update the "Last updated" date above.
+  If this policy changes, we will update the "Last updated" date above. Material changes that
+  affect what leaves your device will be described in the app as well.
 </p>
 
 <h2>Contact us</h2>
