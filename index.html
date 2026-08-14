@@ -38,7 +38,7 @@
 
 <img class="logo" src="logo.png" alt="Progrex logo">
 <h1>Progrex Privacy Policy</h1>
-<p class="updated">Last updated: August 13, 2026</p>
+<p class="updated">Last updated: August 14, 2026</p>
 
 <p>
   Progrex ("the app", "we", "us") is a task and reminder app. This page explains what
@@ -69,8 +69,9 @@
   <li>App preferences: theme, colour palette, language, default time budget, energy preference, protected rest-time window</li>
 </ul>
 <p>
-  None of the above is transmitted to us or to anyone else. The only exception is the
-  <em>title</em> of a task you personally choose to hand to a peer — see the next section.
+  None of the above is transmitted to us or to anyone else. The only exceptions are the
+  <em>title</em> and the <em>due date</em> of a task you personally choose to hand to a peer — see
+  the next section.
 </p>
 
 <h2>Peer accountability (optional, off unless you use it)</h2>
@@ -103,8 +104,14 @@
     <td>Your peer cannot judge whether something is finished without knowing what it is.</td>
   </tr>
   <tr>
-    <td>Encouragement messages sent between you and your peer</td>
-    <td>To deliver them. Both of you can read the thread on that task.</td>
+    <td><strong>The due date of a task you hand to a peer</strong>, if it has one</td>
+    <td>So your peer's own phone can tell them when your deadline has passed and it is time to check
+        whether you did it. If a task has no due date, nothing is sent and no such reminder happens.</td>
+  </tr>
+  <tr>
+    <td>Encouragement messages between you and your peer</td>
+    <td>To deliver them. There is at most one from each of you on a given task — your peer writes
+        theirs when they accept it, and you may write one back — and both of you can read them.</td>
   </tr>
   <tr>
     <td>A notification token for your device</td>
@@ -114,9 +121,13 @@
 
 <p>
   <strong>What is deliberately <em>not</em> sent, even for a peer task:</strong> the task's notes,
-  due date, reminders, time estimates, how long you actually worked, your postpone reasons, and your
-  "why this matters" answer. Your peer sees the title and whether it is done — nothing else about
-  the task, and nothing at all about your other tasks.
+  your reminder settings, time estimates, how long you actually worked, your postpone reasons, and
+  your "why this matters" answer. Your peer sees the title, the deadline and whether it is done —
+  nothing else about the task, and nothing at all about your other tasks.
+</p>
+<p>
+  If you move a deadline, the new one replaces the old one for your peer too, so they are never told
+  you missed a deadline you had already changed.
 </p>
 
 <h2>Accounts</h2>
@@ -158,6 +169,11 @@
   Cloud Messaging when your peer acts on one of your tasks or sends you a message. These are only
   sent to the two people involved in that task.
 </p>
+<p>
+  If you are the peer on someone else's task, your phone also shows you a reminder when that task's
+  deadline passes. That one is scheduled and delivered by your own device from the deadline it
+  already holds — it is not sent from a server, and nothing about it is reported back to us.
+</p>
 
 <h2>Backup and export</h2>
 <p>
@@ -184,7 +200,7 @@
 
 <h2>Who else can see your information</h2>
 <ul>
-  <li><strong>Your peer</strong> sees your display name and the title and status of the specific tasks you hand to them, plus messages in those threads. They cannot see any of your other tasks.</li>
+  <li><strong>Your peer</strong> sees your display name and the title, deadline and status of the specific tasks you hand to them, plus the messages exchanged on those tasks. They cannot see any of your other tasks.</li>
   <li><strong>Google</strong> processes and stores the peer data described above on our behalf, as our infrastructure provider (Firebase Authentication, Firestore, Cloud Messaging and Cloud Functions), and processes payments through Google Play.</li>
 </ul>
 <p>
