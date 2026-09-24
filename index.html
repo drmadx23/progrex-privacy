@@ -38,7 +38,7 @@
 
 <img class="logo" src="logo.png" alt="Progrex logo">
 <h1>Progrex Privacy Policy</h1>
-<p class="updated">Last updated: August 14, 2026</p>
+<p class="updated">Last updated: September 25, 2026</p>
 
 <p>
   Progrex ("the app", "we", "us") is a task and reminder app. This page explains what
@@ -89,11 +89,11 @@
   <tr><th>What</th><th>Why</th></tr>
   <tr>
     <td>An account identifier for you</td>
-    <td>So the app knows which tasks and peers are yours. By default this is an anonymous, randomly generated ID that contains no personal information.</td>
+    <td>So the app knows which tasks and peers are yours. This is the identifier of your Google sign-in; peer accountability requires you to sign in with Google.</td>
   </tr>
   <tr>
     <td>Your invite code and the display name you choose</td>
-    <td>So somebody can add you as a peer, and so they can recognise you. The display name is whatever you type; it does not have to be your real name.</td>
+    <td>So somebody can add you as a peer, and so they can recognise you. The display name is pre-filled with the first name from your Google account; you can change it before saving, and up to two more times afterwards. It does not have to be your real name.</td>
   </tr>
   <tr>
     <td>Who you are paired with, and whether a request is pending, accepted or declined</td>
@@ -132,20 +132,14 @@
 
 <h2>Accounts</h2>
 <p>
-  You can use Progrex without any account. If you use peer accountability, the app signs you in
-  anonymously — a random identifier with no personal details attached.
+  You can use Progrex without any account. Only peer accountability needs one, and the only way to
+  sign in is <strong>Sign in with Google</strong>. Google provides us, through Firebase
+  Authentication, with your email address, name and profile picture URL from your Google account.
+  We use them to show you which account you are signed in with, and to pre-fill your display name.
 </p>
 <p>
-  You may optionally create a real account so your peers and purchases survive reinstalling the app
-  or changing phone:
-</p>
-<ul>
-  <li><strong>Email and password.</strong> Your email address is stored by Google Firebase Authentication. We use it to identify your account and to send password resets.</li>
-  <li><strong>Sign in with Google.</strong> Google provides us with your email address, name and profile picture URL from your Google account.</li>
-</ul>
-<p>
-  Creating an account upgrades your existing anonymous identity rather than replacing it, so your
-  invite code and existing peers carry over.
+  Paid features are tied to your <strong>Google Play account</strong>, not to a Progrex account.
+  They work without signing in and are restored on any phone that uses the same Google Play account.
 </p>
 
 <h2>Calendar access (optional)</h2>
@@ -153,9 +147,27 @@
   If you turn on calendar sync in Settings, Progrex writes an event to a calendar on your device
   (via Android's standard Calendar provider) for each task with a due date, and keeps that event
   updated as you edit or complete the task. This is opt-in, off by default, and entirely local to
-  your device — Progrex only writes to your device's own calendar storage, the same as any other
-  calendar app, and does not read your existing events. Turning sync off leaves any already-created
+  your device — Progrex reads the list of calendars on your device so you can choose one, and
+  writes only its own events to your device's calendar storage, the same as any other calendar app.
+  It does not read your existing events. Turning sync off leaves any already-created
   events in place; you can delete them yourself.
+</p>
+
+<h2>God mode and the free-time prompt (optional)</h2>
+<p>
+  These optional features need two Android permissions that you grant yourself in system settings:
+  <strong>Usage access</strong>, so Progrex can tell which app is currently open (for example, to
+  step in when a social app is opened, or to avoid interrupting an app you are working in), and
+  <strong>Display over other apps</strong>, so it can show its screen on top of another app. This
+  check happens entirely on your device. Progrex does not record, store or send anywhere which apps
+  you use or for how long.
+</p>
+
+<h2>Voice input (optional)</h2>
+<p>
+  If you add a task by voice, Progrex hands the recording to your phone's own speech-recognition
+  service (usually Google's). That service turns your speech into text under its own privacy terms;
+  Progrex receives only the resulting text, and never receives or keeps the audio.
 </p>
 
 <h2>Notifications</h2>
@@ -201,7 +213,7 @@
 <h2>Who else can see your information</h2>
 <ul>
   <li><strong>Your peer</strong> sees your display name and the title, deadline and status of the specific tasks you hand to them, plus the messages exchanged on those tasks. They cannot see any of your other tasks.</li>
-  <li><strong>Google</strong> processes and stores the peer data described above on our behalf, as our infrastructure provider (Firebase Authentication, Firestore, Cloud Messaging and Cloud Functions), and processes payments through Google Play.</li>
+  <li><strong>Google</strong> processes and stores the peer data described above on our behalf, as our infrastructure provider (Firebase Authentication, Firestore and Cloud Messaging), and processes payments through Google Play.</li>
 </ul>
 <p>
   We do not sell your information, and we do not share it with anyone else except where we are
@@ -234,7 +246,7 @@
   <strong>One thing this cannot remove, and you should know it:</strong> if you sent an
   encouragement message on a task belonging to <em>someone else</em>, that message stays in their
   copy of that thread, in the same way an email you sent stays in the recipient's inbox. Your
-  anonymous identifier may also remain listed as the peer on tasks other people created. If you
+  account identifier may also remain listed as the peer on tasks other people created. If you
   want those removed, ask that person to delete the task, or contact us at the address below.
 </p>
 
